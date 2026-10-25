@@ -1,0 +1,6 @@
+{
+  "name": "ArogyaMed",
+  "description": "Premium online pharmacy store across India with digital prescription verification, cash on delivery, and door-to-door delivery.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

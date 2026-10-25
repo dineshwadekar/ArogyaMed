@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "304881180539",
+    "project_id": "firstfirebase-4f6c2",
+    "storage_bucket": "firstfirebase-4f6c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304881180539:android:b79f9729d00d8554e867de",
+        "android_client_info": {
+          "package_name": "com.aistudio.arogyamed.phrpkq"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTDEZe-hygHEKA7W3oVQ8Ohj9cFJCOOTw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

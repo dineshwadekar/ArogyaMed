@@ -1,0 +1,57 @@
+{
+  "entities": {
+    "Product": {
+      "collection": "products",
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "composition": { "type": "string" },
+        "manufacturer": { "type": "string" },
+        "category": { "type": "string" },
+        "form": { "type": "string" },
+        "packSize": { "type": "string" },
+        "mrp": { "type": "number" },
+        "price": { "type": "number" },
+        "discountPercent": { "type": "number" },
+        "requiresPrescription": { "type": "boolean" },
+        "inStock": { "type": "boolean" },
+        "rating": { "type": "number" },
+        "ratingCount": { "type": "number" },
+        "uses": { "type": "string" },
+        "howItWorks": { "type": "string" },
+        "directions": { "type": "string" },
+        "sideEffects": { "type": "string" },
+        "storage": { "type": "string" },
+        "warnings": { "type": "string" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    },
+    "Order": {
+      "collection": "orders",
+      "fields": {
+        "orderId": { "type": "string" },
+        "subtotal": { "type": "number" },
+        "deliveryFee": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "status": { "type": "string" },
+        "orderDate": { "type": "string" },
+        "estimatedDeliveryDate": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "deliveryAddress": { "type": "string" },
+        "pincode": { "type": "string" },
+        "createdAt": { "type": "timestamp" }
+      }
+    },
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "updatedAt": { "type": "timestamp" }
+      }
+    }
+  }
+}

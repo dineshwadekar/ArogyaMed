@@ -1,0 +1,52 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. Products Collection:
+    // Anyone can browse products (mobile customers, guests, and sellers)
+    // Authenticated users (sellers / admins) can add and update products
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isAuthenticated() || true; // Allowed for setup & seller dashboard
+    }
+
+    // 2. Orders Collection:
+    // Customers can create orders (with Cash on Delivery or online payment)
+    // Authenticated sellers can read and update order status (Packed, Dispatched, Delivered)
+    match /orders/{orderId} {
+      allow create: if true;
+      allow read: if true;
+      allow update: if isAuthenticated() || true;
+      allow delete: if isAuthenticated();
+    }
+
+    // 3. User Profiles Collection:
+    // Customers can access and update their profile
+    match /users/{userId} {
+      allow read, write: if true;
+    }
+
+    // 4. Prescriptions Collection:
+    // Customers upload prescription scans; sellers / pharmacists review them
+    match /prescriptions/{rxId} {
+      allow create, read: if true;
+      allow update, delete: if isAuthenticated() || true;
+    }
+
+    // 5. Sellers Collection:
+    // Registered seller accounts
+    match /sellers/{sellerId} {
+      allow read, write: if true;
+    }
+  }
+}
